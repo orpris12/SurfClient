@@ -10,19 +10,16 @@ import {Subscription} from 'rxjs/Subscription';
 })
 
 export class ShopComponent  {
-  products: Product[];
-  productsSubscription: Subscription;
+  products: Array<Product>;
   constructor(private _productService: ProductService){}
 
   ngOnInit() {
-    this.productsSubscription = this._productService.getAllProducts().subscribe((products) => {
-      console.log(`got products : ${products}`);
+      this._productService.getAllProducts().subscribe((products) => {
       this.products = products;
     });
   }
 
   ngOnDestroy(){
-      this.productsSubscription.unsubscribe();
   }
 
 }
