@@ -17,7 +17,7 @@ export class ShopComponent  {
   ngOnInit() {
     this.productsSubscription = this._productService.getAllProducts().subscribe((products) => {
       console.log(`got products : ${products}`);
-      this.products = products;
+     //is.products = products;
     });
   }
 
