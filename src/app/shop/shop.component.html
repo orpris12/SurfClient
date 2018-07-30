@@ -1,6 +1,8 @@
 <!-- Angular -->
-<ul>
+<ol>
   <li *ngFor="let item of products; let i = index">
-    {{i}} {{item.name}} {{item.description}}
+    <div class="product">
+      Name : {{item.name}} Description : {{item.description}}
+    </div>
   </li>
-</ul>
+</ol>
