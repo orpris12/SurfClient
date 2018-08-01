@@ -1,1 +1,8 @@
-<div>You are in the shop</div>
+<!-- Angular -->
+<ol>
+  <li *ngFor="let item of products; let i = index">
+    <div class="product">
+      Name : {{item.name}} Description : {{item.description}}
+    </div>
+  </li>
+</ol>
