@@ -13,11 +13,10 @@ export class ProductService{
 
 
   private products: Observable<Array<Product>> = new Observable<Array<Product>>();
+
   //this loads the http client into the service automatically
   constructor(private http: Http) {
-    // this.headers.append('Access-Control-Allow-Headers', 'Content-Type');
-    // this.headers.append('Access-Control-Allow-Methods', 'GET');
-    // this.headers.append('Access-Control-Allow-Origin', '*');
+
   }
 
     getAllProducts(): Observable<Product[]>{
