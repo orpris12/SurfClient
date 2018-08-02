@@ -18,13 +18,11 @@ export class ProductService{
   constructor(private http: Http) {
 
   }
-
     getAllProducts(): Observable<Product[]>{
       return this.http.get(this.allProductsUrl)
       // ...and calling .json() on the response to return data
         .map((res:Response) => res.json());
         //...errors if any
-
   }
 }
 
