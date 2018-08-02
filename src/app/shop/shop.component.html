@@ -1,8 +1,18 @@
 <!-- Angular -->
-<ol>
-  <li *ngFor="let item of products; let i = index">
-    <div class="product">
-      Name : {{item.name}} Description : {{item.description}} , Price: : {{item.price}},  address : {{item.address}},Picture URL : {{item.pictureUrl}}
+<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css" xmlns="http://www.w3.org/1999/html">
+<script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+<div id="products" class="raw list-group" *ngFor="let item of products; let i = index">
+  <div class="item col-xs-6 col-lg-6">
+    <div class="thumbnail">
+      <h4>{{item.name}}</h4>
+      <p>{{item.description}}</p>
+      <div class="row">
+        <p class="lead"> {{item.price}}$</p>
+        address : <a class="btn">{{item.address}}</a>
+      </div>
+      <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />{{item.pictureUrl}}
     </div>
-  </li>
-</ol>
+  </div>
+</div>
+
