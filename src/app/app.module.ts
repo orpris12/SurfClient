@@ -23,7 +23,8 @@ const appRoutes: Routes = [
   {
     path: '**', component: NotFoundComponent
   }
-]
+];
+
 
 @NgModule({
   imports:      [ BrowserModule, RouterModule.forRoot(appRoutes), HttpModule ],
