@@ -9,10 +9,14 @@ import {CreateNewBoardComponent} from './createnewboard/createnewboard.component
 import {HomepageComponent} from './homepage/homepage.component';
 import {ProductService} from './services/products.service';
 import {HttpModule} from '@angular/http';
+import {ManageComponent} from "./manage/manage.component";
+import {ManageModule} from "./manage/manage.module";
 
 const appRoutes: Routes = [
   {
     path: '', component: HomepageComponent
+  },{
+    path: 'manage', component: ManageComponent
   },
   {
     path: 'shop', component: ShopComponent
@@ -27,8 +31,8 @@ const appRoutes: Routes = [
 
 
 @NgModule({
-  imports:      [ BrowserModule, RouterModule.forRoot(appRoutes), HttpModule ],
-  declarations: [ AppComponent, ShopComponent, NotFoundComponent, HomepageComponent,CreateNewBoardComponent ],
+  imports:      [ BrowserModule, RouterModule.forRoot(appRoutes), HttpModule, ManageModule ],
+  declarations: [ AppComponent, ShopComponent, NotFoundComponent, HomepageComponent,CreateNewBoardComponent , ManageComponent],
   providers: [ProductService],
   bootstrap:    [ AppComponent ]
 })
