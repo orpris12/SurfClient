@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'my-app',
+  selector: 'inner-component',
   templateUrl: './notFound.component.html',
 })
 

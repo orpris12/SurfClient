@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
 })
 export class AppComponent  {
-  name: string = 'Avi';
+  message: string = 'This is the main component'
 }

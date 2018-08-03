@@ -5,11 +5,11 @@ import {Observable} from 'rxjs/Observable';
 import {Subscription} from 'rxjs/Subscription';
 
 @Component({
-  selector: 'my-app',
+  selector: 'inner-component',
   templateUrl: './createnewboard.component.html',
 })
 
-export class CreatenewboardComponent  {
+export class CreateNewBoardComponent  {
   products: Array<Product>;
   constructor(private _productService: ProductService){}
 

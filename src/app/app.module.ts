@@ -5,7 +5,7 @@ import { AppComponent }  from './app.component';
 import {ShopComponent} from './shop/shop.component';
 import {RouterModule, Routes} from '@angular/router';
 import {NotFoundComponent} from './NotFound/notFound.component';
-import {CreatenewboardComponent} from './createnewboard/createnewboard.component';
+import {CreateNewBoardComponent} from './createnewboard/createnewboard.component';
 import {HomepageComponent} from './homepage/homepage.component';
 import {ProductService} from './services/products.service';
 import {HttpModule} from '@angular/http';
@@ -18,7 +18,7 @@ const appRoutes: Routes = [
     path: 'shop', component: ShopComponent
   },
   {
-    path: 'createnewboard', component: CreatenewboardComponent
+    path: 'create', component: CreateNewBoardComponent
   },
   {
     path: '**', component: NotFoundComponent
@@ -28,7 +28,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports:      [ BrowserModule, RouterModule.forRoot(appRoutes), HttpModule ],
-  declarations: [ AppComponent, ShopComponent, NotFoundComponent, HomepageComponent,CreatenewboardComponent ],
+  declarations: [ AppComponent, ShopComponent, NotFoundComponent, HomepageComponent,CreateNewBoardComponent ],
   providers: [ProductService],
   bootstrap:    [ AppComponent ]
 })

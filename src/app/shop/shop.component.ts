@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import {Subscription} from 'rxjs/Subscription';
 
 @Component({
-  selector: 'my-app',
+  selector: 'inner-component',
   templateUrl: './shop.component.html',
 })
 
