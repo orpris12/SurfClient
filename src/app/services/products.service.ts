@@ -9,9 +9,10 @@ import 'rxjs/add/operator/map';
 export class ProductService{
 
   private allProductsUrl = 'http://localhost:8080/api/products';
-  private productUrl = 'http://localhost:8080/api/product/:id';
-  private updateProductUrl = 'http://localhost:8080/api/product/update/:id';
-  private deleteProductUrl = 'http://localhost:8080/api/product/delete/:id'
+  private productUrl = 'http://localhost:8080/api/product/getone/:id';
+  private updateProductUrl = 'http://localhost:8080/api/product/update';
+  private deleteProductUrl = 'http://localhost:8080/api/product/delete/:id';
+  private insertProductUrl = 'http://localhost:8080/api/product/upload';
   // private headers = new Headers();
 
 
@@ -22,10 +23,11 @@ export class ProductService{
 
   }
     getAllProducts(): Observable<Product[]>{
-      return this.http.get(this.allProductsUrl)
+      this.products =  this.http.get(this.allProductsUrl)
       // ...and calling .json() on the response to return data
         .map((res:Response) => res.json());
         //...errors if any
+      return this.products;
   }
 
   getOneProduct(id: string): Observable<Product>{
@@ -34,13 +36,16 @@ export class ProductService{
   }
 
   updateProduct(product: Product){
-    return this.http.post(this.updateProductUrl.replace(':id', product._id),JSON.stringify(product))
-      .map((res: Response) => res.json());
+    return this.http.post(this.updateProductUrl,product);
   }
 
   deleteProduct(id: string){
-    return this.http.delete(this.deleteProductUrl.replace(':id', id))
+    return this.http.get(this.deleteProductUrl.replace(':id', id))
       .map((res: Response) => res.json());
+  }
+
+  insertProduct(product: Product){
+    return this.http.get(this.insertProductUrl,product).map((res: Response) => res.json());
   }
 }
 

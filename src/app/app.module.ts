@@ -11,12 +11,18 @@ import {ProductService} from './services/products.service';
 import {HttpModule} from '@angular/http';
 import {ManageComponent} from "./manage/manage.component";
 import {ManageModule} from "./manage/manage.module";
+import {UpdateComponent} from "./manage/update/update.component";
+import {ManageProductListComponent} from "./manage/list/manage.product.list.component";
+import {FormsModule} from "@angular/forms";
 
 const appRoutes: Routes = [
   {
     path: '', component: HomepageComponent
   },{
-    path: 'manage', component: ManageComponent
+    path: 'manage', component: ManageComponent, children: [
+      {path: 'list', component: ManageProductListComponent},
+      {path: 'edit/:id', component: UpdateComponent}
+    ]
   },
   {
     path: 'shop', component: ShopComponent
@@ -34,7 +40,7 @@ const appRoutes: Routes = [
   imports:      [ BrowserModule, RouterModule.forRoot(appRoutes), HttpModule, ManageModule ],
   declarations: [ AppComponent, ShopComponent, NotFoundComponent, HomepageComponent,CreateNewBoardComponent , ManageComponent],
   providers: [ProductService],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
 })
 
 export class AppModule {

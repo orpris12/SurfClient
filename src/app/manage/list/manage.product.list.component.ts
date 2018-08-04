@@ -1,17 +1,15 @@
-import { Component } from '@angular/core';
-import {ProductService} from "../services/products.service";
-import {Product} from "../models/Product";
-import {functions} from '../helpers/functions'
-import {UpdateComponent} from "./update/update.component";
-import {Router} from "@angular/router";
+import {ProductService} from "../../services/products.service";
+import {Product} from "../../models/Product";
+import {functions} from "../../helpers/functions";
+import {NavigationExtras, Router} from "@angular/router";
+import {Component} from "@angular/core";
 
 @Component({
   selector: 'inner-component',
-  templateUrl: './manage.component.html',
+  templateUrl: './manage.product.list.component.html',
 })
 
-export class ManageComponent  {
-  message: string = 'This is the manage component';
+export class ManageProductListComponent{
   products: Product[] = [];
 
   constructor(private _productService: ProductService, private _router: Router) {}
@@ -22,9 +20,8 @@ export class ManageComponent  {
     });
   }
 
-
   editProduct(product: Product){
-    this._router.navigateByUrl('/edit');
+    this._router.navigate(['manage/edit',product._id],);
   }
 
   deleteProduct(product: Product){
@@ -36,3 +33,4 @@ export class ManageComponent  {
     });
   }
 }
+
