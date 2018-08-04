@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +15,47 @@
 
   <input type="submit" value="Submit">
 </form>
-<!--aboudi changes-->
+<!--aboudi changes
 </body>
 </html>
+ -!>
 
+-->
+
+<div class="container">
+  <h1>Add new board</h1>
+
+  <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+
+    <div class="form-group">
+
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" required
+      [(ngModel)]="model.name" name="name">
+    </div>
+
+    <div class="form-group">
+      <label for="desc">Description</label>
+      <input type="text" class="form-control" id="desc"
+      [(ngModel)]="model.description" name="description">
+    </div>
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input type="text" class="form-control" id="price"
+      [(ngModel)]="model.price" name="price">
+    </div>
+    <div class="form-group">
+      <label for="addr">Address</label>
+      <input type="text" class="form-control" id="addr"
+      [(ngModel)]="model.address" name="address">
+    </div>
+    <div class="form-group">
+      <label for="picurl">PictureUrl</label>
+      <input type="text" class="form-control" id="picurl"
+      [(ngModel)]="model.pictureUrl" name="pictureUrl">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+
+  </form>
+</div>

@@ -3,24 +3,30 @@ import {ProductService} from '../services/products.service';
 import {Product} from '../models/Product';
 import {Observable} from 'rxjs/Observable';
 import {Subscription} from 'rxjs/Subscription';
+import { FormsModule }   from '@angular/forms';
 
 @Component({
-  selector: 'inner-component',
+  selector: 'app-createbewboard',
   templateUrl: './createnewboard.component.html',
+
 })
 
 export class CreateNewBoardComponent  {
+  submitted = false
   products: Array<Product>;
   constructor(private _productService: ProductService){}
+ model=new Product();
 
-  ngOnInit() {
-    this._productService.getAllProducts().subscribe((products) => {
-      this.products = products;
-    });
-  }
+
 
   ngOnDestroy(){
   }
 
+  onSubmit()
+  {
+    this.submitted=true;
+    this._productService.insertProduct(this.model);
+    console.log(this.model.name)
+  }
 }
 

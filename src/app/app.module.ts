@@ -37,7 +37,7 @@ const appRoutes: Routes = [
 
 
 @NgModule({
-  imports:      [ BrowserModule, RouterModule.forRoot(appRoutes), HttpModule, ManageModule ],
+  imports:      [ BrowserModule, RouterModule.forRoot(appRoutes), HttpModule, ManageModule,FormsModule ],
   declarations: [ AppComponent, ShopComponent, NotFoundComponent, HomepageComponent,CreateNewBoardComponent , ManageComponent],
   providers: [ProductService],
   bootstrap:    [ AppComponent ],

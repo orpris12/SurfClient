@@ -41,6 +41,7 @@
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
+    "@angular/cli": "^6.1.0",
     "@types/jasmine": "2.5.36",
     "@types/node": "^6.0.115",
     "canonical-path": "0.0.2",
