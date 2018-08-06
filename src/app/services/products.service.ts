@@ -45,7 +45,8 @@ export class ProductService{
   }
 
   insertProduct(product: Product){
-    return this.http.get(this.insertProductUrl,product).map((res: Response) => res.json());
+    console.log(`inserting ${JSON.stringify(product)}`)
+    return this.http.post(this.insertProductUrl,product);
   }
 }
 

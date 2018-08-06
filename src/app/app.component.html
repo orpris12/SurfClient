@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" [routerLink] = "['']">Surf Shop </a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a [routerLink] = "['']">Homepage</a></li>
       <li><a [routerLink] = "['/shop']">Shop</a></li>
       <li><a [routerLink] = "['/manage/list']">Manage</a></li>
       <li><a [routerLink] = "['/anything']">Not Found</a></li>
-      <li><a [routerLink] = "['/create']">Create new board</a></li>
 
     </ul>
   </div>
@@ -22,4 +19,3 @@
   </router-outlet>
 </div>
 
-<app-createbewboard></app-createbewboard>
