@@ -25,8 +25,12 @@ export class CreateNewBoardComponent  {
   onSubmit()
   {
     this.submitted=true;
-    this._productService.insertProduct(this.model);
-    console.log(this.model.name)
+    this._productService.insertProduct(this.model).subscribe(response => {
+    if(response.status != 200) {
+      console.error(`upload failed ${response.status}`);
+    }
+  });
+
   }
 }
 

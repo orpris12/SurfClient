@@ -4,6 +4,7 @@ import {Product} from "../models/Product";
 import {functions} from '../helpers/functions'
 import {UpdateComponent} from "./update/update.component";
 import {Router} from "@angular/router";
+import { AuthService, AppGlobals } from 'angular2-google-login';
 
 @Component({
   selector: 'inner-component',

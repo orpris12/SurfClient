@@ -15,6 +15,8 @@ import {UpdateComponent} from "./manage/update/update.component";
 import {ManageProductListComponent} from "./manage/list/manage.product.list.component";
 import {FormsModule} from "@angular/forms";
 
+import {LoginComponent} from "./manage/login/login.component";
+
 const appRoutes: Routes = [
   {
     path: '', component: HomepageComponent
@@ -31,6 +33,9 @@ const appRoutes: Routes = [
     path: 'create', component: CreateNewBoardComponent
   },
   {
+    path: 'login', component: LoginComponent
+  },
+  {
     path: '**', component: NotFoundComponent
   }
 ];
@@ -38,7 +43,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports:      [ BrowserModule, RouterModule.forRoot(appRoutes), HttpModule, ManageModule,FormsModule ],
-  declarations: [ AppComponent, ShopComponent, NotFoundComponent, HomepageComponent,CreateNewBoardComponent , ManageComponent],
+  declarations: [ AppComponent, ShopComponent, NotFoundComponent, HomepageComponent,CreateNewBoardComponent , ManageComponent,LoginComponent ],
   providers: [ProductService],
   bootstrap:    [ AppComponent ],
 })
